@@ -17,6 +17,8 @@ let bdx2 = -5
 let side = Math.random()
 let s1 = 0
 let s2 = 0
+let c = "white"
+let c1 = "white"
 
 let upkeypressed = false;
 let downkeypressed = false;
@@ -92,11 +94,11 @@ function start(){
 
     // Score
     ctx.font = "30px Comic Sans MS"
-    ctx.fillStyle = "white"
+    ctx.fillStyle = c1
     ctx.fillText(s2, 50, 50)
 
     ctx.font = "30px Comic Sans MS"
-    ctx.fillStyle = "white"
+    ctx.fillStyle = c
     ctx.fillText(s1, 720, 50)
 
 
@@ -110,14 +112,20 @@ function start(){
     
   
     if (bx >= x + 10 && by >= y && by <= y+33){
+        bdx += 0.05
+        bdx2 += 0.05
         bdx *= -1
         bdx2 *= -1
         bdy = -5
         
     } else if (bx >= x + 10 && by >= y && by <= y+66){
+        bdx += 0.05
+        bdx2 += 0.05
         bdx *= -1
         bdx2 *= -1
     } else if (bx >= x + 10 && by >= y && by <= y+100){
+        bdx += 0.05
+        bdx2 += 0.05
         bdx *= -1
         bdx2 *= -1
         bdy = 5
@@ -125,13 +133,19 @@ function start(){
     
      
     if (bx <= x2 + 10 && by >= y2 && by <= y2+33){
+        bdx += -0.05
+        bdx2 += -0.05
         bdx *= -1
         bdx2 *= -1
         bdy = -5
     } else if (bx <= x2 + 10 && by >= y2 && by <= y2+66){
+        bdx += -0.05
+        bdx2 += -0.05
         bdx *= -1
         bdx2 *= -1
     } else if (bx <= x2 + 10 && by >= y2 && by <= y2+100){
+        bdx += -0.05
+        bdx2 += -0.05
         bdx *= -1
         bdx2 *= -1
         bdy = 5
@@ -144,19 +158,48 @@ function start(){
     }
 
     if (bx < -10){
+        if (s1 <= 18){
         bx = 400
         by = Math.random() * 650
+        bdx = -5
+        bdx2 = -5
         bdx *= -1
         bdx2 *= -1
         s1 ++
+        } else {
+        bx = 400
+        by = Math.random() * 650
+        bdx = -5
+        bdx2 = -5
+        bdx *= -1
+        bdx2 *= -1
+        s1 ++
+        c = "green"
+        }
+
+
 
         
     } else if (bx > 810){
+
+        if (s2 <= 18){
         bx = 400
         by = Math.random() * 650
+        bdx = 5
+        bdx2 = 5
         bdx *= -1
         bdx2 *= -1
         s2 ++
+        } else {
+        bx = 400
+        by = Math.random() * 650
+        bdx = 5
+        bdx2 = 5
+        bdx *= -1
+        bdx2 *= -1
+        s2 ++
+        c1 = "green"
+        }
     }
 
     // Ball
@@ -166,7 +209,6 @@ function start(){
     ctx.fill()
     
 }
-
     requestAnimationFrame(start)
 }
 
