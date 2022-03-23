@@ -51,162 +51,162 @@ function start(){
     } else{
 
 
-    // MOVEMENT
-    if (upkeypressed){
-        y -= 5
-    }
+        // MOVEMENT
+        if (upkeypressed){
+            y -= 5
+        }
 
-    if (downkeypressed){
-        y += 5
-    }
+        if (downkeypressed){
+            y += 5
+        }
 
-    if (wkeypressed){
-        y2 -= 5
-    }
+        if (wkeypressed){
+            y2 -= 5
+        }
 
-    if (skeypressed){
-        y2 += 5
-    }
+        if (skeypressed){
+            y2 += 5
+        }
 
-    if (y >= 600){
-        y = 600
-      } else if (y <= 0){
-        y=0
-      }
+        if (y >= 600){
+            y = 600
+        } else if (y <= 0){
+            y=0
+        }
     
-    if (y2 >= 600){
-        y2 = 600
-      } else if (y2 <= 0){
-        y2 = 0
-      }
-    // Draw
-    // Background
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, cnv.width, cnv.height);
+        if (y2 >= 600){
+            y2 = 600
+        } else if (y2 <= 0){
+            y2 = 0
+        }
+        // Draw
+        // Background
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, cnv.width, cnv.height);
 
-    // Player 
-    ctx.fillStyle = "white"
-    ctx.fillRect(x, y, 10, 100)
+        // Player 
+        ctx.fillStyle = "white"
+        ctx.fillRect(x, y, 10, 100)
 
-    // Player 2
-    ctx.fillStyle = "white"
-    ctx.fillRect(x2, y2, 10, 100)
+        // Player 2
+        ctx.fillStyle = "white"
+        ctx.fillRect(x2, y2, 10, 100)
 
-    // Score
-    ctx.font = "30px Comic Sans MS"
-    ctx.fillStyle = c1
-    ctx.fillText(s2, 50, 50)
+        // Score
+        ctx.font = "30px Comic Sans MS"
+        ctx.fillStyle = c1
+        ctx.fillText(s2, 50, 50)
 
-    ctx.font = "30px Comic Sans MS"
-    ctx.fillStyle = c
-    ctx.fillText(s1, 720, 50)
+        ctx.font = "30px Comic Sans MS"
+        ctx.fillStyle = c
+        ctx.fillText(s1, 720, 50)
 
 
-    if (side <= 0.5){
-    by += bdy
-    bx += bdx
-    } else {
-        bx += bdx2
-        by += bdy
-    }
+        if (side <= 0.5){
+            by += bdy
+            bx += bdx
+        } else {
+            bx += bdx2
+            by += bdy
+        }
     
   
-    if (bx >= x + 10 && by >= y && by <= y+33){
-        bdx += 0.05
-        bdx2 += 0.05
-        bdx *= -1
-        bdx2 *= -1
-        bdy = -5
+        if (bx >= x + 10 && by >= y && by <= y+33){
+            bdx += 0.05
+            bdx2 += 0.05
+            bdx *= -1
+            bdx2 *= -1
+            bdy = -5
         
-    } else if (bx >= x + 10 && by >= y && by <= y+66){
-        bdx += 0.05
-        bdx2 += 0.05
-        bdx *= -1
-        bdx2 *= -1
-    } else if (bx >= x + 10 && by >= y && by <= y+100){
-        bdx += 0.05
-        bdx2 += 0.05
-        bdx *= -1
-        bdx2 *= -1
-        bdy = 5
-    }
+        } else if (bx >= x + 10 && by >= y && by <= y+66){
+            bdx += 0.05
+            bdx2 += 0.05
+            bdx *= -1
+            bdx2 *= -1
+        } else if (bx >= x + 10 && by >= y && by <= y+100){
+            bdx += 0.05
+            bdx2 += 0.05
+            bdx *= -1
+            bdx2 *= -1
+            bdy = 5
+        }
     
      
-    if (bx <= x2 + 10 && by >= y2 && by <= y2+33){
-        bdx += -0.05
-        bdx2 += -0.05
-        bdx *= -1
-        bdx2 *= -1
-        bdy = -5
-    } else if (bx <= x2 + 10 && by >= y2 && by <= y2+66){
-        bdx += -0.05
-        bdx2 += -0.05
-        bdx *= -1
-        bdx2 *= -1
-    } else if (bx <= x2 + 10 && by >= y2 && by <= y2+100){
-        bdx += -0.05
-        bdx2 += -0.05
-        bdx *= -1
-        bdx2 *= -1
-        bdy = 5
-    }
-
-    if (by <=0 && bx >= 0){
-        bdy *= -1
-    } else if (by >= 700 && bx <= 800){
-        bdy *= -1
-    }
-
-    if (bx < -10){
-        if (s1 <= 18){
-        bx = 400
-        by = Math.random() * 650
-        bdx = -5
-        bdx2 = -5
-        bdx *= -1
-        bdx2 *= -1
-        s1 ++
-        } else {
-        bx = 400
-        by = Math.random() * 650
-        bdx = -5
-        bdx2 = -5
-        bdx *= -1
-        bdx2 *= -1
-        s1 ++
-        c = "green"
+        if (bx <= x2 + 10 && by >= y2 && by <= y2+33){
+            bdx += -0.05
+            bdx2 += -0.05
+            bdx *= -1
+            bdx2 *= -1
+            bdy = -5
+        } else if (bx <= x2 + 10 && by >= y2 && by <= y2+66){
+            bdx += -0.05
+            bdx2 += -0.05
+            bdx *= -1
+            bdx2 *= -1
+        } else if (bx <= x2 + 10 && by >= y2 && by <= y2+100){
+            bdx += -0.05
+            bdx2 += -0.05
+            bdx *= -1
+            bdx2 *= -1
+            bdy = 5
         }
+
+        if (by <=0 && bx >= 0){
+            bdy *= -1
+        } else if (by >= 700 && bx <= 800){
+            bdy *= -1
+        }
+
+        if (bx < -10){
+            if (s1 <= 18){
+            bx = 400
+            by = Math.random() * 650
+            bdx = -5
+            bdx2 = -5
+            bdx *= -1
+            bdx2 *= -1
+            s1 ++
+            } else {
+            bx = 400
+            by = Math.random() * 650
+            bdx = -5
+            bdx2 = -5
+            bdx *= -1
+            bdx2 *= -1
+            s1 ++
+            c = "green"
+            }
 
 
 
         
-    } else if (bx > 810){
+        } else if (bx > 810){
 
-        if (s2 <= 18){
-        bx = 400
-        by = Math.random() * 650
-        bdx = 5
-        bdx2 = 5
-        bdx *= -1
-        bdx2 *= -1
-        s2 ++
-        } else {
-        bx = 400
-        by = Math.random() * 650
-        bdx = 5
-        bdx2 = 5
-        bdx *= -1
-        bdx2 *= -1
-        s2 ++
-        c1 = "green"
+            if (s2 <= 18){
+            bx = 400
+            by = Math.random() * 650
+            bdx = 5
+            bdx2 = 5
+            bdx *= -1
+            bdx2 *= -1
+            s2 ++
+            } else {
+            bx = 400
+            by = Math.random() * 650
+            bdx = 5
+            bdx2 = 5
+            bdx *= -1
+            bdx2 *= -1
+            s2 ++
+            c1 = "green"
+            }
         }
-    }
 
-    // Ball
-    ctx.fillStyle = "white"
-    ctx.beginPath();
-    ctx.arc(bx, by, 10, 0, 2* Math.PI)
-    ctx.fill()
+        // Ball
+        ctx.fillStyle = "white"
+        ctx.beginPath();
+        ctx.arc(bx, by, 10, 0, 2* Math.PI)
+        ctx.fill()
     
 }
     requestAnimationFrame(start)
