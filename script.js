@@ -31,52 +31,52 @@ let imgthree = document.getElementById("3")
 
 document.getElementById("btn").addEventListener("click", start);
 
-function start(){
+function start() {
 
     // Update Frames
     frame += 2
-    
-    if (frame < 120){
+
+    if (frame < 120) {
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, cnv.width, cnv.height);
         ctx.drawImage(imgthree, 0, 0, cnv.width, cnv.height)
-    } else if (frame < 240){
+    } else if (frame < 240) {
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, cnv.width, cnv.height);
         ctx.drawImage(imgtwo, 0, 0, cnv.width, cnv.height)
-    } else if (frame < 360){
+    } else if (frame < 360) {
         ctx.fillStyle = "white";
         ctx.fillRect(0, 0, cnv.width, cnv.height);
         ctx.drawImage(imgone, 0, 0, cnv.width, cnv.height)
-    } else{
+    } else {
 
 
         // MOVEMENT
-        if (upkeypressed){
+        if (upkeypressed) {
             y -= 5
         }
 
-        if (downkeypressed){
+        if (downkeypressed) {
             y += 5
         }
 
-        if (wkeypressed){
+        if (wkeypressed) {
             y2 -= 5
         }
 
-        if (skeypressed){
+        if (skeypressed) {
             y2 += 5
         }
 
-        if (y >= 600){
+        if (y >= 600) {
             y = 600
-        } else if (y <= 0){
-            y=0
+        } else if (y <= 0) {
+            y = 0
         }
-    
-        if (y2 >= 600){
+
+        if (y2 >= 600) {
             y2 = 600
-        } else if (y2 <= 0){
+        } else if (y2 <= 0) {
             y2 = 0
         }
         // Draw
@@ -102,48 +102,48 @@ function start(){
         ctx.fillText(s1, 720, 50)
 
 
-        if (side <= 0.5){
+        if (side <= 0.5) {
             by += bdy
             bx += bdx
         } else {
             bx += bdx2
             by += bdy
         }
-    
-  
-        if (bx >= x + 10 && by >= y && by <= y+33){
+
+
+        if (bx >= x + 10 && by >= y && by <= y + 33) {
             bdx += 0.05
             bdx2 += 0.05
             bdx *= -1
             bdx2 *= -1
             bdy = -5
-        
-        } else if (bx >= x + 10 && by >= y && by <= y+66){
+
+        } else if (bx >= x + 10 && by >= y && by <= y + 66) {
             bdx += 0.05
             bdx2 += 0.05
             bdx *= -1
             bdx2 *= -1
-        } else if (bx >= x + 10 && by >= y && by <= y+100){
+        } else if (bx >= x + 10 && by >= y && by <= y + 100) {
             bdx += 0.05
             bdx2 += 0.05
             bdx *= -1
             bdx2 *= -1
             bdy = 5
         }
-    
-     
-        if (bx <= x2 + 10 && by >= y2 && by <= y2+33){
+
+
+        if (bx <= x2 + 10 && by >= y2 && by <= y2 + 33) {
             bdx += -0.05
             bdx2 += -0.05
             bdx *= -1
             bdx2 *= -1
             bdy = -5
-        } else if (bx <= x2 + 10 && by >= y2 && by <= y2+66){
+        } else if (bx <= x2 + 10 && by >= y2 && by <= y2 + 66) {
             bdx += -0.05
             bdx2 += -0.05
             bdx *= -1
             bdx2 *= -1
-        } else if (bx <= x2 + 10 && by >= y2 && by <= y2+100){
+        } else if (bx <= x2 + 10 && by >= y2 && by <= y2 + 100) {
             bdx += -0.05
             bdx2 += -0.05
             bdx *= -1
@@ -151,64 +151,64 @@ function start(){
             bdy = 5
         }
 
-        if (by <=0 && bx >= 0){
+        if (by <= 0 && bx >= 0) {
             bdy *= -1
-        } else if (by >= 700 && bx <= 800){
+        } else if (by >= 700 && bx <= 800) {
             bdy *= -1
         }
 
-        if (bx < -10){
-            if (s1 <= 18){
-            bx = 400
-            by = Math.random() * 650
-            bdx = -5
-            bdx2 = -5
-            bdx *= -1
-            bdx2 *= -1
-            s1 ++
+        if (bx < -10) {
+            if (s1 <= 18) {
+                bx = 400
+                by = Math.random() * 650
+                bdx = -5
+                bdx2 = -5
+                bdx *= -1
+                bdx2 *= -1
+                s1++
             } else {
-            bx = 400
-            by = Math.random() * 650
-            bdx = -5
-            bdx2 = -5
-            bdx *= -1
-            bdx2 *= -1
-            s1 ++
-            c = "green"
+                bx = 400
+                by = Math.random() * 650
+                bdx = -5
+                bdx2 = -5
+                bdx *= -1
+                bdx2 *= -1
+                s1++
+                c = "green"
             }
 
 
 
-        
-        } else if (bx > 810){
 
-            if (s2 <= 18){
-            bx = 400
-            by = Math.random() * 650
-            bdx = 5
-            bdx2 = 5
-            bdx *= -1
-            bdx2 *= -1
-            s2 ++
+        } else if (bx > 810) {
+
+            if (s2 <= 18) {
+                bx = 400
+                by = Math.random() * 650
+                bdx = 5
+                bdx2 = 5
+                bdx *= -1
+                bdx2 *= -1
+                s2++
             } else {
-            bx = 400
-            by = Math.random() * 650
-            bdx = 5
-            bdx2 = 5
-            bdx *= -1
-            bdx2 *= -1
-            s2 ++
-            c1 = "green"
+                bx = 400
+                by = Math.random() * 650
+                bdx = 5
+                bdx2 = 5
+                bdx *= -1
+                bdx2 *= -1
+                s2++
+                c1 = "green"
             }
         }
 
         // Ball
         ctx.fillStyle = "white"
         ctx.beginPath();
-        ctx.arc(bx, by, 10, 0, 2* Math.PI)
+        ctx.arc(bx, by, 10, 0, 2 * Math.PI)
         ctx.fill()
-    
-}
+
+    }
     requestAnimationFrame(start)
 }
 
@@ -216,28 +216,28 @@ function start(){
 document.addEventListener("keyup", keyup)
 document.addEventListener("keydown", keydown)
 
-function keydown(event){
+function keydown(event) {
     console.log(event.keyCode)
-    if (event.keyCode === 38){
+    if (event.keyCode === 38) {
         upkeypressed = true;
-      } else if (event.keyCode === 40){
+    } else if (event.keyCode === 40) {
         downkeypressed = true
-    } else if (event.keyCode === 87){
+    } else if (event.keyCode === 87) {
         wkeypressed = true
-    } else if (event.keyCode === 83){
+    } else if (event.keyCode === 83) {
         skeypressed = true
     }
-    
+
 }
 
-function keyup (event){
+function keyup(event) {
     if (event.keyCode === 38) {
         upkeypressed = false;
-      } else if (event.keyCode === 40) { 
+    } else if (event.keyCode === 40) {
         downkeypressed = false;
-      } else if (event.keyCode === 87){
+    } else if (event.keyCode === 87) {
         wkeypressed = false;
-    } else if (event.keyCode === 83){
+    } else if (event.keyCode === 83) {
         skeypressed = false;
     }
 }
