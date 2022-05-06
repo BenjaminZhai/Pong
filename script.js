@@ -110,7 +110,6 @@ function start() {
             by += bdy
         }
 
-
         if (bx >= x + 10 && by >= y && by <= y + 33) {
             bdx += 0.05
             bdx2 += 0.05
